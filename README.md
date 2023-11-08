@@ -1,6 +1,6 @@
 ## Tour de France Analysis
 
-### Tour de France Stage Data Analysis with Google Drive Integration
+### Tour de France Stage Data Analysis with Predictive Modeling and Hypothesis Testing
 
 - Usage:
   - Import CSV data into DataFrame for analysis
