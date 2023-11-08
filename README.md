@@ -16,5 +16,6 @@
 <br>
 
 **Example image:**
-![Tour de France Example Screen 1](/assets/TDF-Screen1.png)
-![Tour de France Example Screen 1](/assets/TDF-Screen2.png)
+![Tour de France Example Screen 1](/assets/tdf-screen1.png)
+![Tour de France Example Screen 2](/assets/tdf-screen2.png)
+![Tour de France Example Screen 3](/assets/tdf-screen3.png)
