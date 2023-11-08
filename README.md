@@ -17,7 +17,11 @@
 
 **Example image:**
 ![Tour de France Example Screen 1](/assets/tdf-screen1.png)
+
 <br>
+
 ![Tour de France Example Screen 2](/assets/tdf-screen2.png)
+
 <br>
+
 ![Tour de France Example Screen 3](/assets/tdf-screen3.png)
