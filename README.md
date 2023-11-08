@@ -2,22 +2,14 @@
 
 ### Tour de France Stage Data Analysis with Google Drive Integration
 
-- External libraries: Pandas, Pydrive
-- Usage: Authenticate with Google Drive -> Download Tour de France stage data -> perform data analysis, and display various insights and statistics
+- Usage:
+  - Import CSV data into DataFrame for analysis
+  - Preprocess data inclyding feature extraction and data cleaning
+  - Perform time series analysis on stage distances over the years
+  - Apply predictive modeling techniques to predict stage winners based on features like year, distance, and stage type
+  - Conduct hypothesis testing to compare to average stage distances between decades of Tour de France races
+- External libraries: fbprophet, matplotlib, pandas, pydrive, plotly.express, scikit-learn, scipy
 - Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
-
-<br>
-<br>
-
-**Expected Output:**
-
-- Importing Tour de France CSV Data
-- Display last rows of Dataframe 
-- Filtering by Winner (Mark Cavendish) 
-- Longest Stage Information
-- Average Stage Distance
-- Number of Unique Stage Winners
-- Number of Stages per Year
   
 <br>
 <br>
