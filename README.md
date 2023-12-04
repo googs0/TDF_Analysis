@@ -26,7 +26,7 @@
    ```bash
    python _main.py
 
-**\*/** Please note that the code is tailored to analyzing specific Tour de France data and may need adjustments if you want to apply it to a different source
+**\*** Please note that the code is tailored to analyzing specific Tour de France data and may need adjustments if you want to apply it to a different source
 
 ### External Libraries
 - **keras**: Deep learning
