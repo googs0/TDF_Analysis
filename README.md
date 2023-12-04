@@ -1,6 +1,28 @@
 ## Tour de France Analysis
 
-### Tour de France Stage Data Analysis with Predictive Modeling and Hypothesis Testing
+### Data Analysis with Predictive Modeling, Hypothesis Testing, Geospatial Data Visualtion, and Cluster Analysis
+
+
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/googs0/TourDeFranceStagesAnalysis.git
+
+<br>
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+
+<br>
+
+2. **Run**
+   ```bash
+   python _main.py
+
+<br>
+
+Please note that the code is tailored to analyzing specific Tour de France data and may need adjustments if you want to apply it to a different text source
 
 - Usage:
   - Import CSV data into DataFrame for analysis
