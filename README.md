@@ -98,7 +98,7 @@
 
 <br>
 
-![Tour de France Example Screen LSTM 3](/assets/img/tdf_lstm3.png.png)
+![Tour de France Example Screen LSTM 3](/assets/img/tdf_lstm3.png)
 
 <br>
 <br>
