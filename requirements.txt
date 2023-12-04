@@ -1,0 +1,24 @@
+# Core packages
+matplotlib==3.4.3
+numpy==1.21.2
+pandas==1.3.3
+requests==2.26.0
+seaborn==0.11.2
+scipy==1.7.3
+scikit-learn==0.24.2
+
+# Time series analysis
+statsmodels==0.13.0
+statsmodels-arima==0.11.1
+statsmodels-exponential-smoothing==0.13.0
+
+# Machine learning
+keras==2.6.0
+
+# Geocoding
+opencage==1.2.2
+
+# Plotting libraries
+plotly==5.3.1
+matplotlib-dates==1.8.3
+mplcursors==0.4
