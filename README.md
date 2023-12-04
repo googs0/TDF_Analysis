@@ -52,9 +52,30 @@ Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
 <br>
 <br>
 
-**Example image:**
-![Tour de France Example Screen 1](/assets/tdf-screen1.png)
+### Example images
+
+#### Main
+![Tour de France Example Screen 1](/assets/img/tdf_main1.png)
 
 <br>
 
-![Tour de France Example Screen 2](/assets/tdf-screen2.png)
+![Tour de France Example Screen 2](/assets/img/tdf_main1.png)
+
+#### Download and Process
+![Tour de France Example Screen 1](/assets/img/tdf_download_and_process.png)
+
+<br>
+<br>
+
+#### Geospatial
+![Tour de France Example Screen 1](/assets/img/tdf_geoplot1.png)
+
+<br>
+
+![Tour de France Example Screen 2](/assets/img/tdf_geoplot2.png)
+
+<br>
+
+![Tour de France Example Screen 2](/assets/img/tdf_geoplot3.png)
+
+
