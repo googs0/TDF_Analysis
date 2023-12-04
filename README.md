@@ -26,8 +26,6 @@
    ```bash
    python _main.py
 
-<br>
-
    \* Please note that the code is tailored to analyzing specific Tour de France data and may need adjustments if you want to apply it to a different source
 
 ### External Libraries
@@ -44,12 +42,7 @@
 - **scipy**: Scientific and technical computing
 - **seaborn**: Statistical data visualization
 - **statsmodels**: Statistical models and tests for time series analysis
-
-<br>
-
-Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
   
-<br>
 <br>
 
 ### Example images
@@ -215,4 +208,4 @@ Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
 <br>
 
 Thanks!
-
+Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
