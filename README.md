@@ -27,19 +27,27 @@
    python _main.py
 
 <br>
-<br>
 
 * Please note that the code is tailored to analyzing specific Tour de France data and may need adjustments if you want to apply it to a different source
 
-- Usage:
-  - Import CSV data into DataFrame for analysis
-  - Preprocess data inclyding feature extraction and data cleaning
-  - Perform time series analysis on stage distances over the years
-  - Apply predictive modeling techniques to predict stage winners based on features like year, distance, and stage type
-  - Conduct hypothesis testing to compare to average stage distances between decades of Tour de France races
-  - Enhance functionality as needed for specific use case
-- External libraries: fbprophet, matplotlib, pandas, pydrive, plotly.express, scikit-learn, scipy
-- Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
+### External Libraries
+- **keras**: Deep learning
+- **matplotlib**: Data visualization
+- **mplcursors**: Interactive hover information
+- **numpy**: Math ops with arrays
+- **opencage.geocoder**: Geocoding for location coordinates
+- **pandas**: Data manipulation and analysis
+- **plotly**: Interactive plotting
+- **plotly.graph_objects**: Interactive graphs
+- **requests**: HTTP requests
+- **scikit-learn**: Machine learning and data analysis
+- **scipy**: Scientific and technical computing
+- **seaborn**: Statistical data visualization
+- **statsmodels**: Statistical models and tests for time series analysis
+
+<br>
+
+Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
   
 <br>
 <br>
