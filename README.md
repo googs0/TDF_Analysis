@@ -55,11 +55,11 @@ Contact Information: [mgug1455@gmail.com](mailto:mgug1455@gmail.com)
 ### Example images
 
 #### Main
-![Tour de France Example Screen 1](/assets/img/tdf_main1.png)
+![Tour de France Example Screen 1](/assets/img/tdf_main.png)
 
 <br>
 
-![Tour de France Example Screen 2](/assets/img/tdf_main1.png)
+![Tour de France Example Screen 2](/assets/img/tdf_main2.png)
 
 #### Download and Process
 ![Tour de France Example Screen 1](/assets/img/tdf_download_and_process.png)
