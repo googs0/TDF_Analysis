@@ -1,65 +1,59 @@
-from imports import logging, re
+from imports import KMeans, logging, pd, plt, re, sns
 
 
-def clean_data_historical_modern(data):
-    # Fill missing values
-    data['Hour'].fillna(0, inplace=True)
-    data['Minutes'].fillna(0, inplace=True)
-    data['Seconds'].fillna(0, inplace=True)
-    data['Pace'].fillna(0, inplace=True)
-    data['Team'].fillna('No Team', inplace=True)
+def create_stage_groups(row, df):
+    stage = str(row['Stage'])
 
-    # Convert types
-    data[['Hour', 'Minutes', 'Seconds']] = data[['Hour', 'Minutes', 'Seconds']].astype(int)
-    logging.info(f"Hour, Minutes, Seconds to int:\n{data.dtypes}\n")
+    if len(stage) == 1 and stage.isalpha():
+        return 00
 
-    # Rename columns and create a new column
-    data.rename(columns={'Started': 'Riders Started', 'Ended': 'Riders Finished', 'Distance': 'Distance (km)',
-                         'RidersDropped': 'Riders Dropped'}, inplace=True)
+    numeric_part = re.search(r'(\d+)', str(row['Stage'])).group(1) if re.search(r'(\d+)', str(row['Stage'])) else None
 
-    data['Riders Dropped'] = data['Riders Started'] - data['Riders Finished']
+    if numeric_part is None:
+        # Filter df to find all rows with the same single character
+        filter_condition = (df['Stage'].str.len() == 1) & (df['Stage'] == row['Stage'])
+        numeric_part = str(df.loc[filter_condition, 'Stages'].min())
 
-    # Miles distance
-    miles = data['Distance (km)'] / 1.609344
-    data.insert(5, "Distance (mi)", miles)
-
-    # Round to the second decimal
-    data = data.round(decimals=2)
-
-    # Move columns to the end
-    move_columns = ['Riders Started', 'Riders Finished']
-    other_columns = [col for col in data.columns if col not in move_columns]
-    data = data[other_columns[:-1] + [move_columns[0]] + [move_columns[1]] + other_columns[-1:]]
-
-    # Log sample
-    logging.info(f"Sample of Tour De France after cleaning:\n{data.sample(10)}"
-                 f"\n\nTour De France Data Cleaning Complete\n\n")
-
-    return data
+    return numeric_part
 
 
-def clean_data_stages(data):
-    data = data.rename({'Distance': 'Distance (km)', 'Origin': 'Origin City',
-                        'Destination': 'Destination City', 'Type': 'Stage Type',
-                        'Winner_Country': 'Country'}, axis='columns')
+# Clustering Analysis
+def clustering_analysis(data):
+    # Check if 'Stage' column is present
+    if 'Stage' not in data.columns:
+        logging.warning("'Stage' column not found. Make sure it is created in the preprocessing steps.")
+        return
 
-    # Miles distance
-    miles = data['Distance (km)'] / 1.609344
-    data.insert(3, "Distance (mi)", miles)
+    # Create a new column 'Stages Grouped' based on the 'Stage' column
+    data['Stages Grouped'] = data.apply(lambda row: create_stage_groups(row, data), axis=1)
 
-    year_list = []
-    full_date = data['Date']
-    for date in full_date:
-        format_date = date.split("/")[-1]
-        year_list.append(int(format_date))
+    # Convert 'Stages Grouped' to numeric type
+    data['Stages Grouped'] = pd.to_numeric(data['Stages Grouped'], errors='coerce')
 
-    data.insert(2, 'Year', year_list)
+    # Features for cluster
+    features = data[['Distance (km)', 'Stages Grouped']]
 
-    data = data.round(decimals=2)
+    # K-Means clustering
+    num_clusters = 3  
+    kmeans = KMeans(n_clusters=num_clusters, random_state=42, n_init='auto')
+    data['Cluster'] = kmeans.fit_predict(features)
 
-    data['Country'] = data['Country'].apply(
-        lambda x: re.search(r'"(.*?)"', str(x)).group(1).upper() if re.search(r'"(.*?)"', str(x)) else x)
+    # Plot clusters 
+    plt.figure(figsize=(12, 8))
+    palette = sns.color_palette("husl", num_clusters)
 
-    logging.info(f"Sample of Stages after cleaning:\n{data.head(10)}\n\nStages Data Cleaning Complete\n\n")
+    sns.scatterplot(data=data, x='Distance (km)', y='Stages Grouped',
+                    hue='Cluster', palette=palette)
 
-    return data
+    plt.xlabel('Distance (km)')
+    plt.ylabel('Stages Grouped')
+    plt.title('Clustering Analysis of Tour de France Stages')
+    plt.show()
+
+    # Drop temporary numerical column
+    data.drop(columns=['Stages Grouped'], inplace=True)
+
+    # If 'Stages Grouped Numeric' is present, drop it
+    if 'Stages Grouped Numeric' in data.columns:
+        data.drop(columns=['Stages Grouped Numeric'], inplace=True)
+
