@@ -3,28 +3,11 @@
 ### Data Analysis with Predictive Modeling, Hypothesis Testing, Geospatial Data Visualtion, and Cluster Analysis
 
 ### Overview
-- Data Analysis and Visualization:
-   - Utilizes libraries like pandas, seaborn, and matplotlib for data analysis and visualization
-     Presents data on stage distances over the years using line plots and forecasting
-
-- Machine Learning:
-   - Implements machine learning models, including RandomForestClassifier for classification tasks
-   - Evaluates model performance using metrics like accuracy_score and classification_report
-
-- Time Series Analysis:
-   - Applies time series forecasting techniques, such as ARIMA and Exponential Smoothing (Holt-Winters)
-   - Visualizes time series data, including forecasts and actual values, using matplotlib and plotly
-
-- Deep Learning (LSTM):
-   - Utilizes LSTM (Long Short-Term Memory) neural network architecture for time series forecasting
-   - Splits data into training and testing sets
-
-- Geocoding:
-   - Uses the opencage library for geocoding, translating location names into geographical coordinates
-
-- Statistical Analysis:
-   - Performs statistical tests, including t-tests and ANOVA, to analyze differences in stage distances across years or decades
-   - Outputs statistical results and significance levels
+- Data Analysis and Visualization
+- Machine Learning
+- Time Series Analysis
+- Deep Learning (LSTM)
+- Geocoding
 
 ### Usage
 1. **Clone the Repository:**
