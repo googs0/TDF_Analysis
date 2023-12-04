@@ -23,7 +23,6 @@ def clean_data_historical_modern(data):
     miles = data['Distance (km)'] / 1.609344
     data.insert(5, "Distance (mi)", miles)
 
-    # Round to the second decimal
     data = data.round(decimals=2)
 
     # Move columns to the end
@@ -31,7 +30,6 @@ def clean_data_historical_modern(data):
     other_columns = [col for col in data.columns if col not in move_columns]
     data = data[other_columns[:-1] + [move_columns[0]] + [move_columns[1]] + other_columns[-1:]]
 
-    # Log sample
     logging.info(f"Sample of Tour De France after cleaning:\n{data.sample(10)}"
                  f"\n\nTour De France Data Cleaning Complete\n\n")
 
@@ -39,24 +37,26 @@ def clean_data_historical_modern(data):
 
 
 def clean_data_stages(data):
+    # Rename columns
     data = data.rename({'Distance': 'Distance (km)', 'Origin': 'Origin City',
                         'Destination': 'Destination City', 'Type': 'Stage Type',
                         'Winner_Country': 'Country'}, axis='columns')
 
-    # Miles distance
+    # Add 'Miles' distance column
     miles = data['Distance (km)'] / 1.609344
     data.insert(3, "Distance (mi)", miles)
 
+    # Add 'Year' column
     year_list = []
     full_date = data['Date']
     for date in full_date:
         format_date = date.split("/")[-1]
         year_list.append(int(format_date))
-
     data.insert(2, 'Year', year_list)
-
+    
     data = data.round(decimals=2)
 
+    # Clean unformatted countries
     data['Country'] = data['Country'].apply(
         lambda x: re.search(r'"(.*?)"', str(x)).group(1).upper() if re.search(r'"(.*?)"', str(x)) else x)
 
